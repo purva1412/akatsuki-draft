@@ -1,0 +1,8 @@
+const express = require("express");
+const router = express.Router();
+const { improvePost } = require("../controllers/aiController");
+const { verifyToken } = require("../middlewares/authMiddleware");
+
+router.post("/improve/:postId", verifyToken, improvePost);
+
+module.exports = router;
